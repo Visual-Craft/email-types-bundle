@@ -8,7 +8,20 @@ Symfony Bundle for structured email composing.
 composer require visual-craft/email-types-bundle
 ```
 
-### Configure bundle
+### Enable bundle (not needed if Symfony Flex used)
+```php
+<?php
+// config/bundles.php
+
+return [
+    // ...
+    VisualCraft\EmailTypesBundle\VisualCraftEmailTypesBundle::class => ['all' => true],
+    // ...
+];
+
+```
+
+### Configure bundle (optional)
 ```yaml
 # config/packages/email_types.yaml
 visual_craft_email_types:
