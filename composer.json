@@ -1,0 +1,22 @@
+{
+    "type": "symfony-bundle",
+    "name": "visual-craft/email-types-bundle",
+    "description": "Symfony Bundle for structured email composing",
+    "require": {
+        "php": ">=7.4",
+        "symfony/framework-bundle": "^4.4|^5.0",
+        "symfony/mailer": "^4.4|^5.0",
+        "symfony/options-resolver": "^4.4|^5.0",
+        "symfony/twig-bridge": "^4.4|^5.0",
+        "symfony/translation": "^4.4|^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "VisualCraft\\EmailTypesBundle\\": "src/"
+        }
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.18",
+        "kubawerlos/php-cs-fixer-custom-fixers": "^2.4"
+    }
+}
