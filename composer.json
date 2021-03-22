@@ -2,6 +2,7 @@
     "type": "symfony-bundle",
     "name": "visual-craft/email-types-bundle",
     "description": "Symfony Bundle for structured email composing",
+    "license": "MIT",
     "require": {
         "php": ">=7.4",
         "symfony/framework-bundle": "^4.4|^5.0",
