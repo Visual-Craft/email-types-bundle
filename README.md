@@ -115,4 +115,4 @@ class ActivationController extends AbstractController
 ```
 
 ## License
-This bundle is under the MIT license. See the complete license in LICENSE.txt file.
+This bundle is under the MIT license. See the complete license in LICENSE file.
