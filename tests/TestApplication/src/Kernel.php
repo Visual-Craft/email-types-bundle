@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace VisualCraft\EmailTypesBundle\Tests\TestApplication;
 
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
@@ -43,16 +45,16 @@ final class Kernel extends SymfonyKernel implements CompilerPassInterface
         return \dirname(__DIR__);
     }
 
+    public function process(ContainerBuilder $container): void
+    {
+        $container->getDefinition(Mailer::class)->setPublic(true);
+    }
+
     protected function configureContainer(ContainerBuilder $container, LoaderInterface $loader): void
     {
         $loader->load($this->getProjectDir() . '/config/{packages}/*.php', 'glob');
         $loader->load($this->getProjectDir() . '/config/{packages}/' . $this->environment . '/*.php', 'glob');
         $loader->load($this->getProjectDir() . '/config/{services}.php', 'glob');
         $loader->load($this->getProjectDir() . '/config/{services}_' . $this->environment . '.php', 'glob');
-    }
-
-    public function process(ContainerBuilder $container)
-    {
-        $container->getDefinition(Mailer::class)->setPublic(true);
     }
 }

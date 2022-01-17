@@ -1,7 +1,8 @@
 <?php
 
-namespace VisualCraft\EmailTypesBundle\Tests\TestApplication\EmailType;
+declare(strict_types=1);
 
+namespace VisualCraft\EmailTypesBundle\Tests\TestApplication\EmailType;
 
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\OptionsResolver\OptionsResolver;

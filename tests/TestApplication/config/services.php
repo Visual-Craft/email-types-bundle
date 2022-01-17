@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
-return static function (ContainerConfigurator $container) {
+return static function (ContainerConfigurator $container): void {
     $services = $container->services()
         ->defaults()
         ->autowire()
@@ -10,5 +12,6 @@ return static function (ContainerConfigurator $container) {
     ;
 
     $services->load('VisualCraft\\EmailTypesBundle\\Tests\\TestApplication\\', '../src/*')
-        ->exclude('../Kernel.php');
+        ->exclude('../Kernel.php')
+    ;
 };
