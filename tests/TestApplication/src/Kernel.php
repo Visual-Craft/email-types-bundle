@@ -10,6 +10,7 @@ use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Kernel as SymfonyKernel;
+use Symfony\Component\Routing\RouteCollectionBuilder;
 use VisualCraft\EmailTypesBundle\Mailer;
 use VisualCraft\EmailTypesBundle\VisualCraftEmailTypesBundle;
 
@@ -56,5 +57,9 @@ final class Kernel extends SymfonyKernel implements CompilerPassInterface
         $loader->load($this->getProjectDir() . '/config/{packages}/' . $this->environment . '/*.php', 'glob');
         $loader->load($this->getProjectDir() . '/config/{services}.php', 'glob');
         $loader->load($this->getProjectDir() . '/config/{services}_' . $this->environment . '.php', 'glob');
+    }
+
+    protected function configureRoutes(RouteCollectionBuilder $routes)
+    {
     }
 }

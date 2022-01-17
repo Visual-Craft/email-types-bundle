@@ -19,7 +19,8 @@ class MailerTest extends KernelTestCase
     public function testSend(): void
     {
         /** @var Mailer $mailer */
-        $mailer = $this->getContainer()->get(Mailer::class);
+        self::bootKernel();
+        $mailer = static::$kernel->getContainer()->get(Mailer::class);
 
         $mailer->send(MessageEmailType::class, []);
 
