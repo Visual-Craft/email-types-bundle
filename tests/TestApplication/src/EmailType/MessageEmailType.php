@@ -12,10 +12,6 @@ class MessageEmailType implements EmailTypeInterface
 {
     public function configureOptions(OptionsResolver $optionsResolver): void
     {
-//        $optionsResolver
-//            ->setRequired(['user'])
-//            ->setAllowedTypes('user', User::class)
-//        ;
     }
 
     public function configureEmail(TemplatedEmail $email, array $options): void
