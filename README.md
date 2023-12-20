@@ -3,12 +3,13 @@ Symfony Bundle for structured email composing.
 
 ## Installation and configuration
 
-### Install using composer
+### Step 1: Install the bundle
 ```shell
 composer require visual-craft/email-types-bundle
 ```
 
-### Enable bundle (not needed if Symfony Flex used)
+### Step 2: Enable the bundle
+If you are not using Flex, you also have to enable the bundle by adding the following line in the app/AppKernel.php:
 ```php
 <?php
 // config/bundles.php
