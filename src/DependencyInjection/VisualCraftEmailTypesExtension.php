@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace VisualCraft\EmailTypesBundle\DependencyInjection;
 
-use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use VisualCraft\EmailTypesBundle\EmailTypeInterface;
 use VisualCraft\EmailTypesBundle\Mailer;
