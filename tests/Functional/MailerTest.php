@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace VisualCraft\EmailTypesBundle\Tests\FunctionalTests;
+namespace VisualCraft\EmailTypesBundle\Tests\Functional;
 
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Bundle\FrameworkBundle\Test\MailerAssertionsTrait;
