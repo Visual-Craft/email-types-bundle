@@ -114,5 +114,23 @@ class ActivationController extends AbstractController
 }
 ```
 
+Tests
+-----
+```sh
+$ vendor/bin/simple-phpunit install
+$ vendor/bin/simple-phpunit
+```
+
+Additional Tools
+-----
+```sh
+$ composer install
+$ vendor/bin/php-cs-fixer fix
+$ composer lint
+```
+## Credits
+
+Developed by [Visual Craft](https://www.visual-craft.com/).
+
 ## License
 This bundle is under the MIT license. See the complete license in LICENSE file.
