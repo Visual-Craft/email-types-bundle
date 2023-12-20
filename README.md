@@ -19,7 +19,6 @@ return [
     VisualCraft\EmailTypesBundle\VisualCraftEmailTypesBundle::class => ['all' => true],
     // ...
 ];
-
 ```
 
 ### Configure bundle (optional)
@@ -29,7 +28,6 @@ visual_craft_email_types:
     # used in case of email 'from' is not explicitly set (default null) 
     default_email_from: 'Name <contact@example.com>'
 ```
-
 
 ## Usage
 
@@ -72,7 +70,6 @@ class UserActivationType implements EmailTypeInterface
         ;
     }
 }
-
 ```
 
 ### Register your email type class as a service
