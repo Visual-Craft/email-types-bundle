@@ -23,8 +23,6 @@
         }
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^v3.41",
-        "kubawerlos/php-cs-fixer-custom-fixers": "^3.17",
         "symfony/phpunit-bridge": "^4.4|^5.0|^6.0|^7.0",
         "visual-craft/php-cs-fixer-config": "^0.3.1"
     },
