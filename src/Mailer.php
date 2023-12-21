@@ -84,7 +84,7 @@ class Mailer
             $translationContext = [];
 
             foreach ($email->getContext() as $key => $value) {
-                if (is_scalar($value) || (\is_object($value) && method_exists($value, '__toString'))) {
+                if (\is_scalar($value) || (\is_object($value) && method_exists($value, '__toString'))) {
                     $translationContext["%{$key}%"] = (string) $value;
                 }
             }

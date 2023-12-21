@@ -3,12 +3,13 @@ Symfony Bundle for structured email composing.
 
 ## Installation and configuration
 
-### Install using composer
+### Step 1: Install the bundle
 ```shell
 composer require visual-craft/email-types-bundle
 ```
 
-### Enable bundle (not needed if Symfony Flex used)
+### Step 2: Enable the bundle
+If you are not using Flex, you also have to enable the bundle by adding the following line in the app/AppKernel.php:
 ```php
 <?php
 // config/bundles.php
@@ -18,7 +19,6 @@ return [
     VisualCraft\EmailTypesBundle\VisualCraftEmailTypesBundle::class => ['all' => true],
     // ...
 ];
-
 ```
 
 ### Configure bundle (optional)
@@ -28,7 +28,6 @@ visual_craft_email_types:
     # used in case of email 'from' is not explicitly set (default null) 
     default_email_from: 'Name <contact@example.com>'
 ```
-
 
 ## Usage
 
@@ -71,7 +70,6 @@ class UserActivationType implements EmailTypeInterface
         ;
     }
 }
-
 ```
 
 ### Register your email type class as a service
@@ -113,6 +111,24 @@ class ActivationController extends AbstractController
     }
 }
 ```
+
+Tests
+-----
+```sh
+$ vendor/bin/simple-phpunit install
+$ vendor/bin/simple-phpunit
+```
+
+Additional Tools
+-----
+```sh
+$ composer install
+$ vendor/bin/php-cs-fixer fix
+$ composer lint
+```
+## Credits
+
+Developed by [Visual Craft](https://www.visual-craft.com/).
 
 ## License
 This bundle is under the MIT license. See the complete license in LICENSE file.
