@@ -22,7 +22,7 @@ class Mailer
 
     private ServiceLocator $emailTypesLocator;
 
-    private BodyRendererInterface $bodyRenderer;
+    private ?BodyRendererInterface $bodyRenderer;
 
     private ?string $defaultFrom = null;
 
@@ -30,7 +30,7 @@ class Mailer
         MailerInterface $mailer,
         TranslatorInterface $translator,
         ServiceLocator $emailTypesLocator,
-        BodyRendererInterface $bodyRenderer
+        ?BodyRendererInterface $bodyRenderer = null
     ) {
         $this->mailer = $mailer;
         $this->translator = $translator;
@@ -63,7 +63,11 @@ class Mailer
         $email = $this->createEmailInstance();
         $type->configureEmail($email, $options);
         $this->preProcessEmail($email);
-        $this->bodyRenderer->render($email);
+
+        if ($this->bodyRenderer) {
+            $this->bodyRenderer->render($email);
+        }
+
         $this->mailer->send($email);
     }
 

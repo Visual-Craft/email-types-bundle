@@ -24,6 +24,7 @@
     },
     "require-dev": {
         "symfony/phpunit-bridge": "^4.4|^5.0|^6.0|^7.0",
+        "symfony/twig-bundle": "^4.4|^5.0|^6.0|^7.0",
         "visual-craft/php-cs-fixer-config": "^0.4",
         "friendsofphp/php-cs-fixer": "v3.53.0"
     },
