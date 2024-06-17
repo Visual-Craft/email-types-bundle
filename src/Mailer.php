@@ -23,6 +23,7 @@ class Mailer
     private ServiceLocator $emailTypesLocator;
 
     private BodyRendererInterface $bodyRenderer;
+
     private ?string $defaultFrom = null;
 
     public function __construct(
