@@ -6,6 +6,7 @@ namespace VisualCraft\EmailTypesBundle\Tests\TestApplication;
 
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
+use Symfony\Bundle\TwigBundle\TwigBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -27,6 +28,7 @@ final class Kernel extends SymfonyKernel implements CompilerPassInterface
     {
         return [
             new FrameworkBundle(),
+            new TwigBundle(),
             new VisualCraftEmailTypesBundle(),
         ];
     }

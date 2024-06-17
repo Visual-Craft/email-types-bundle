@@ -8,6 +8,7 @@ use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\DependencyInjection\ServiceLocator;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Address;
+use Symfony\Component\Mime\BodyRendererInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use VisualCraft\EmailTypesBundle\Exception\InvalidEmailTypeOptionsException;
@@ -21,16 +22,20 @@ class Mailer
 
     private ServiceLocator $emailTypesLocator;
 
+    private ?BodyRendererInterface $bodyRenderer;
+
     private ?string $defaultFrom = null;
 
     public function __construct(
         MailerInterface $mailer,
         TranslatorInterface $translator,
-        ServiceLocator $emailTypesLocator
+        ServiceLocator $emailTypesLocator,
+        ?BodyRendererInterface $bodyRenderer = null
     ) {
         $this->mailer = $mailer;
         $this->translator = $translator;
         $this->emailTypesLocator = $emailTypesLocator;
+        $this->bodyRenderer = $bodyRenderer;
     }
 
     public function setDefaultFrom(?string $value): void
@@ -58,6 +63,11 @@ class Mailer
         $email = $this->createEmailInstance();
         $type->configureEmail($email, $options);
         $this->preProcessEmail($email);
+
+        if ($this->bodyRenderer) {
+            $this->bodyRenderer->render($email);
+        }
+
         $this->mailer->send($email);
     }
 
