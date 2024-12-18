@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace VisualCraft\EmailTypesBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+use Symfony\Component\DependencyInjection\Extension\Extension;
 use VisualCraft\EmailTypesBundle\EmailTypeInterface;
 use VisualCraft\EmailTypesBundle\Mailer;
 
