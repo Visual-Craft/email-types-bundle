@@ -7,7 +7,7 @@
         "php": ">=7.4",
         "symfony/framework-bundle": "^6.0|^7.0",
         "symfony/mailer": "^6.0|^7.0",
-        "symfony/options-resolver": "^^6.0|^7.0",
+        "symfony/options-resolver": "^6.0|^7.0",
         "symfony/twig-bridge": "^6.0|^7.0",
         "symfony/translation": "^6.0|^7.0"
     },
