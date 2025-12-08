@@ -14,7 +14,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 use VisualCraft\EmailTypesBundle\Exception\InvalidEmailTypeOptionsException;
 use VisualCraft\EmailTypesBundle\Exception\MissingEmailTypeException;
 
-class Mailer
+class   Mailer
 {
     private MailerInterface $mailer;
 
@@ -46,7 +46,7 @@ class Mailer
     public function send(string $typeName, array $options): void
     {
         if (!$this->emailTypesLocator->has($typeName)) {
-            throw new MissingEmailTypeException(sprintf("Unsupported mail type '%s'.", $typeName));
+            throw new MissingEmailTypeException(\sprintf("Unsupported mail type '%s'.", $typeName));
         }
 
         /** @var EmailTypeInterface $type */
@@ -57,7 +57,7 @@ class Mailer
         try {
             $options = $optionsResolver->resolve($options);
         } catch (\Exception $e) {
-            throw new InvalidEmailTypeOptionsException(sprintf("Invalid options are provided for mail type '%s'.", $typeName), 0, $e);
+            throw new InvalidEmailTypeOptionsException(\sprintf("Invalid options are provided for mail type '%s'.", $typeName), 0, $e);
         }
 
         $email = $this->createEmailInstance();
