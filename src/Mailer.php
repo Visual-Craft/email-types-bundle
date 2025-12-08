@@ -14,7 +14,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 use VisualCraft\EmailTypesBundle\Exception\InvalidEmailTypeOptionsException;
 use VisualCraft\EmailTypesBundle\Exception\MissingEmailTypeException;
 
-class   Mailer
+class Mailer
 {
     private MailerInterface $mailer;
 
